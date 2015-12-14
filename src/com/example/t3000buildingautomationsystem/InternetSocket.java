@@ -58,7 +58,7 @@ public class InternetSocket {
 	}
 	
 	// ´Ósocket¶ÁÊý¾Ý
-	void ReadInternet(byte[] rsvBuf){
+	boolean ReadInternet(byte[] rsvBuf){
 		try{
 			// TODO
 			//byte[] rsvBuf = new byte[128]; 
@@ -69,9 +69,11 @@ public class InternetSocket {
 			//	System.out.println(Integer.toHexString(thebyte));
 			//}
 			//getIp.setText(new String(rsvBuf).subSequence(0, 36));
+			return true;
 		}catch(IOException ioe){
 			System.out.println("&&&Timeout receive");
 			ioe.printStackTrace();
+			return false;
 		}
 	}
 	

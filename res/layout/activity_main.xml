@@ -1,81 +1,30 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
-
-    <RelativeLayout
-        android:id="@+id/first_device_area"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="20dp">
-        
-	    <ImageView
-	        android:id="@+id/first_device"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:contentDescription="@string/image_desc"
-	        android:screenOrientation="landscape"
-	        android:src="@drawable/lb_pic"
-	        android:visibility="invisible" />
-
-    </RelativeLayout>
-    
-    <RelativeLayout
-        android:id="@+id/second_device_area"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_toRightOf="@id/first_device_area"
-        android:layout_marginTop="20dp">
-        
-        <ImageView
-	        android:id="@+id/second_device"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:screenOrientation="landscape"
-	        android:contentDescription="@string/image_desc"
-	        android:src="@drawable/tstat6_pic"
-	        android:visibility="invisible" />
-    </RelativeLayout>
-    
-    <RelativeLayout
-        android:id="@+id/third_device_area"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_toRightOf="@id/second_device_area"
-        android:layout_marginTop="20dp">
-        
-        <ImageView
-	        android:id="@+id/third_device"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:screenOrientation="landscape"
-	        android:contentDescription="@string/image_desc"
-	        android:src="@drawable/tstat6_pic"
-	        android:visibility="invisible" />
-    </RelativeLayout>
-    
-    <RelativeLayout
-        android:id="@+id/fourth_device_area"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_toRightOf="@id/third_device_area"
-        android:layout_marginTop="20dp">
-        
-        <ImageView
-	        android:id="@+id/fourth_device"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:screenOrientation="landscape"
-	        android:contentDescription="@string/image_desc"
-	        android:src="@drawable/tstat6_pic"
-	        android:visibility="invisible" />
-    </RelativeLayout>
-    
-    
-</RelativeLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+ 
+ 
+    <ImageView android:id="@+id/img" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_margin="5px"/>
+ 
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content">
+ 
+        <TextView android:id="@+id/title" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:textColor="#000000"
+            android:textSize="42px" />
+        <TextView android:id="@+id/info" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:textColor="#9090FE"
+            android:textSize="33px" />
+ 
+    </LinearLayout>
+ 
+ 
+</LinearLayout>
