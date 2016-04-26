@@ -66,46 +66,55 @@
         android:text="      "
         android:textColor="#ffffff"
         android:textSize="24sp" />
+        
+    <ImageView
+        android:id="@+id/downCool_button"
+        android:layout_width="35dp"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/coolingSetpoint_value"
+        android:layout_alignTop="@id/coolingSetpoint_value"
+        android:layout_alignBottom="@id/coolingSetpoint_value"
+        android:screenOrientation="landscape"
+        android:contentDescription="@string/image_desc"
+        android:src="@drawable/minus" />
     
     <ImageView
         android:id="@+id/upCool_button"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="160dp"
+        android:layout_width="35dp"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/downCool_button"
+        android:layout_alignTop="@id/coolingSetpoint_value"
+        android:layout_alignBottom="@id/coolingSetpoint_value"
         android:screenOrientation="landscape"
         android:contentDescription="@string/image_desc"
-        android:src="@drawable/up_key" />
-    
-    <ImageView
-        android:id="@+id/downCool_button"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:src="@drawable/plus" />
+        <!-- android:layout_height="30dp"
         android:layout_marginLeft="280dp"
-        android:layout_below="@id/upCool_button"
-        android:screenOrientation="landscape"
-        android:contentDescription="@string/image_desc"
-        android:src="@drawable/down_key" />
-    
-    <ImageView
-        android:id="@+id/upHeat_button"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="280dp"
-        android:layout_below="@id/downCool_button"
-        android:screenOrientation="landscape"
-        android:contentDescription="@string/image_desc"
-        android:src="@drawable/up_key" />
-    
+        android:layout_below="@id/upCool_button" -->
+        
     <ImageView
         android:id="@+id/downHeat_button"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="280dp"
-        android:layout_below="@id/upHeat_button"
+        android:layout_width="35dp"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/heatingSetpoint_value"
+        android:layout_alignTop="@id/heatingSetpoint_value"
+        android:layout_alignBottom="@id/heatingSetpoint_value"
         android:screenOrientation="landscape"
         android:contentDescription="@string/image_desc"
-        android:src="@drawable/down_key" />
+        android:src="@drawable/minus" />
+        
+    <ImageView
+        android:id="@+id/upHeat_button"
+        android:layout_width="35dp"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/downHeat_button"
+        android:layout_alignTop="@id/heatingSetpoint_value"
+        android:layout_alignBottom="@id/heatingSetpoint_value"
+        android:screenOrientation="landscape"
+        android:contentDescription="@string/image_desc"
+        android:src="@drawable/plus" />
+    
+    
     <!-- TextView 
         android:id="@+id/fan_value"
         android:layout_width="wrap_content"
@@ -137,21 +146,21 @@
         android:src="@drawable/green" />
     
     <ImageView
-        android:id="@+id/moon_pic"
+        android:id="@+id/occ_pic"
         android:layout_width="40sp"
         android:layout_height="40sp"
         android:layout_toRightOf="@id/sun_pic"
         android:layout_marginTop="48dp"
         android:contentDescription="@string/image_desc"
         android:screenOrientation="landscape"
-        android:src="@drawable/moon"
-        android:visibility="invisible" />
+        android:src="@drawable/unocc"
+        android:visibility="visible" />
     
     <ImageView
         android:id="@+id/snowflake_pic"
         android:layout_width="40sp"
         android:layout_height="40sp"
-        android:layout_toRightOf="@id/moon_pic"
+        android:layout_toRightOf="@id/occ_pic"
         android:layout_marginTop="48dp"
         android:contentDescription="@string/image_desc"
         android:screenOrientation="landscape"
@@ -167,6 +176,17 @@
         android:screenOrientation="landscape"
         android:src="@drawable/fan"
         android:visibility="invisible" />
+    
+    <ImageView
+        android:id="@+id/fanMode_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@id/snowflake_pic"
+        android:layout_alignTop="@id/fanMode_value"
+        android:contentDescription="@string/image_desc"
+        android:screenOrientation="landscape"
+        android:src="@drawable/slower"
+        android:visibility="visible" />
     
     <TextView
         android:id="@+id/humidity_value"

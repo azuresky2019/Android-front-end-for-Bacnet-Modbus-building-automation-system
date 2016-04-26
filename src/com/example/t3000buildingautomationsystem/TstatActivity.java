@@ -18,6 +18,8 @@ public class TstatActivity extends Activity{
 	ImageView testImageButton;
 	ImageView dayOrNightImageButton;
 	ImageView snowflakeImage;
+	ImageView occupancyModeImage;
+	ImageView fanModeImageButton;
 	
 	TextView deviceNameText;
 	TextView temperatureText;
@@ -57,6 +59,8 @@ public class TstatActivity extends Activity{
 	    
 	    dayOrNightImageButton = (ImageView)findViewById(R.id.sun_pic);
 	    snowflakeImage = (ImageView)findViewById(R.id.snowflake_pic);
+	    occupancyModeImage = (ImageView)findViewById(R.id.occ_pic);
+	    fanModeImageButton = (ImageView)findViewById(R.id.fanMode_button);
 	    
 	    upCoolButton = (ImageView)findViewById(R.id.upCool_button);
 	    downCoolButton = (ImageView)findViewById(R.id.downCool_button);
@@ -67,6 +71,7 @@ public class TstatActivity extends Activity{
 	    downCoolButton.setOnClickListener(mDownCoolButtonListener);
 	    upHeatButton.setOnClickListener(mUpHeatButtonListener);
 	    downHeatButton.setOnClickListener(mDownHeatButtonListener);
+	    fanModeImageButton.setOnClickListener(mFanModeImageButtonListener);
 	    
 	    dayOrNightImageButton.setOnClickListener(mDayOrNightImageButton);
 	    
@@ -111,9 +116,11 @@ public class TstatActivity extends Activity{
 	        			break;
 	        		case 0x02:
 	        			fanModeText.setText("Medium Speed");
+	        			fanModeImageButton.setImageResource(R.drawable.medium);
 	        			break;
 	        		case 0x03:
 	        			fanModeText.setText("High Speed");
+	        			fanModeImageButton.setImageResource(R.drawable.fast);
 	        			break;
 	        		case 0x04:
 	        			fanModeText.setText("Auto");
@@ -131,6 +138,7 @@ public class TstatActivity extends Activity{
         		if(mDevice.occupiedMode == 1){
         			dayOrNightImageButton.setImageResource(R.drawable.sun);
         			//dayOrNightImageButton.setVisibility(View.VISIBLE);
+        			occupancyModeImage.setImageResource(R.drawable.occ);
         			System.out.println("(((((((((((((((((((((((((dayOrNightImageButton set as sun");
         			coolingSetpointText.setText(Float.toString(mDevice.currentDayCoolingSetpoint)+"¡æ");
         			heatingSetpointText.setText(Float.toString(mDevice.currentDayHeatingSetpoint)+"¡æ");
@@ -138,6 +146,7 @@ public class TstatActivity extends Activity{
         		}else{
         			dayOrNightImageButton.setImageResource(R.drawable.moon);
         			//dayOrNightImageButton.setVisibility(View.VISIBLE);
+        			occupancyModeImage.setImageResource(R.drawable.unocc);
         			System.out.println("))))))))))))))))))))))))))dayOrNightImageButton set as moon");
         			coolingSetpointText.setText(Float.toString(mDevice.currentNightCoolingSetpoint)+"¡æ");
         			heatingSetpointText.setText(Float.toString(mDevice.currentNightHeatingSetpoint)+"¡æ");
@@ -329,4 +338,13 @@ public class TstatActivity extends Activity{
 			}, KEY_HOLD_TIMEOUT);
 		}
 	};
+	
+	private View.OnClickListener mFanModeImageButtonListener = new View.OnClickListener() {
+		
+		@Override
+		public void onClick(View arg0) {
+			
+		}
+	};
+	
 }

@@ -22,37 +22,68 @@ public final class R {
     }
     public static final class drawable {
         public static final int down_key=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int lb_pic=0x7f020002;
-        public static final int left_key=0x7f020003;
-        public static final int right_key=0x7f020004;
-        public static final int tstat6_label=0x7f020005;
-        public static final int tstat6_pic=0x7f020006;
-        public static final int tstat6_pic_backup=0x7f020007;
-        public static final int up_key=0x7f020008;
+        public static final int fan=0x7f020001;
+        public static final int fast=0x7f020002;
+        public static final int fire=0x7f020003;
+        public static final int green=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int lb_pic=0x7f020006;
+        public static final int left_key=0x7f020007;
+        public static final int medium=0x7f020008;
+        public static final int minus=0x7f020009;
+        public static final int minus_old=0x7f02000a;
+        public static final int moon=0x7f02000b;
+        public static final int occ=0x7f02000c;
+        public static final int plus=0x7f02000d;
+        public static final int plus_old=0x7f02000e;
+        public static final int right_key=0x7f02000f;
+        public static final int slow=0x7f020010;
+        public static final int slower=0x7f020011;
+        public static final int snowflake=0x7f020012;
+        public static final int sun=0x7f020013;
+        public static final int t3000=0x7f020014;
+        public static final int tstat6_label=0x7f020015;
+        public static final int tstat6_pic=0x7f020016;
+        public static final int tstat6_pic_backup=0x7f020017;
+        public static final int unocc=0x7f020018;
+        public static final int up_key=0x7f020019;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000f;
-        public static final int alias=0x7f080008;
-        public static final int down_button=0x7f08000c;
-        public static final int first_device=0x7f080001;
-        public static final int first_device_area=0x7f080000;
-        public static final int fourth_device=0x7f080007;
-        public static final int fourth_device_area=0x7f080006;
-        public static final int left_button=0x7f08000b;
-        public static final int right_button=0x7f08000e;
-        public static final int second_device=0x7f080003;
-        public static final int second_device_area=0x7f080002;
-        public static final int third_device=0x7f080005;
-        public static final int third_device_area=0x7f080004;
-        public static final int title_area=0x7f080009;
-        public static final int up_button=0x7f08000d;
-        public static final int value_area=0x7f08000a;
+        public static final int action_settings=0x7f08001b;
+        public static final int alias=0x7f080003;
+        public static final int coolingSetpoint_value=0x7f08000e;
+        public static final int device_name=0x7f08000b;
+        public static final int downCool_button=0x7f080011;
+        public static final int downHeat_button=0x7f080013;
+        public static final int down_button=0x7f080008;
+        public static final int fanMode_button=0x7f080019;
+        public static final int fanMode_value=0x7f080010;
+        public static final int fan_pic=0x7f080018;
+        public static final int heatingSetpoint_value=0x7f08000f;
+        public static final int humidity_value=0x7f08001a;
+        public static final int img=0x7f080000;
+        public static final int info=0x7f080002;
+        public static final int left_button=0x7f080007;
+        public static final int listview=0x7f080004;
+        public static final int occ_pic=0x7f080016;
+        public static final int right_button=0x7f08000a;
+        public static final int setpoint_value=0x7f08000d;
+        public static final int snowflake_pic=0x7f080017;
+        public static final int sun_pic=0x7f080015;
+        public static final int temperature_value=0x7f08000c;
+        public static final int title=0x7f080001;
+        public static final int title_area=0x7f080005;
+        public static final int upCool_button=0x7f080012;
+        public static final int upHeat_button=0x7f080014;
+        public static final int up_button=0x7f080009;
+        public static final int value_area=0x7f080006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int input_name=0x7f030001;
-        public static final int tstat_detail=0x7f030002;
+        public static final int list_view=0x7f030002;
+        public static final int old_tstat_detail=0x7f030003;
+        public static final int tstat_detail=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f070000;

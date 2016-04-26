@@ -26,6 +26,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +38,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends Activity {
 
 	final static byte PRODUCT_TSTAT_5B = 1;
 	final static byte PRODUCT_TSTAT_5A = 2;
@@ -83,8 +85,10 @@ public class MainActivity extends ListActivity {
 	
 	private static Handler loopHandler = new Handler();
 	
-	LinearLayout ll;
-	
+	//LinearLayout ll;
+	private ListView lv;
+
+    //private OnItemClickListener mOnItemClickListener;
 	private SimpleAdapter adapter = null;
 	private Map<String, Object> map = null;//new HashMap<String, Object>();
 	private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
@@ -95,16 +99,26 @@ public class MainActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
 				WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);   //禁止屏幕锁屏
-		//setContentView(R.layout.activity_main);
+		setContentView(R.layout.list_view);
 
-		//listView = (ListView)findViewById(R.id.listview);
+		lv = (ListView)findViewById(R.id.listview);
+		lv.setOnItemClickListener(new OnItemClickListener()
+	    {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long id) {
+				TstatActivity.mDevice = deviceVector.get(position);
+				final Intent intent = new Intent(MainActivity.this, TstatActivity.class);
+				startActivity(intent);
+			}   
+	    } );
 		adapter = new SimpleAdapter(this,list,R.layout.activity_main,
                 new String[]{"title","info","img"},
                 new int[]{R.id.title,R.id.info,R.id.img});
 		//listView = new ListView(this);
-        //listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,getData()));
-        setListAdapter(adapter);
-		
+        lv.setAdapter(adapter);//new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,getData()));
+        //setListAdapter(adapter);
+        
 	    WifiManager manager = (WifiManager) this  
                 .getSystemService(Context.WIFI_SERVICE);  
 	    mWifilock= manager.createMulticastLock("test wifi");
@@ -167,8 +181,17 @@ public class MainActivity extends ListActivity {
 		}
 	};	
 	
+
+	
+	/*private ListView.onItemClickListener mOnItemClickListener = new onItemClickListener(){
+	    @Override
+	    protected void onListItemClick(AdapterView<?> arg0, View view,
+                int position, long id){
+	        //Do stuff
+	    }
+	};
 	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id){
+	mOnItemClickListener = new onListItemClick(ListView l, View v, int position, long id){
 		//String str = new String("Position"+position+"id"+id);
 		//String str = deviceVector.get(position).name;
 		//list.get(position).put("info", str);
@@ -176,7 +199,7 @@ public class MainActivity extends ListActivity {
 		TstatActivity.mDevice = deviceVector.get(position);
 		final Intent intent = new Intent(MainActivity.this, TstatActivity.class);
 		startActivity(intent);
-	}
+	}*/
 	/*private List<Map<String, Object>> getData() {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
  

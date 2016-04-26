@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.t3000buildingautomationsystem.TstatDetailActivity"
+            android:name="com.example.t3000buildingautomationsystem.TstatActivity"
             android:label="@string/app_name" >
         </activity>
     </application>
